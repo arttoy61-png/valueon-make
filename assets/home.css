@@ -71,9 +71,8 @@ p,h1,h2,ol,dl,dd{margin:0}
  .make-intro h1{font-size:30px;line-height:1.18;margin-top:8px}.make-intro h1 span{display:block}
  .intro-note{text-align:left;font-size:12px;line-height:1.7;margin-top:12px}
  .work-grid{grid-template-columns:1fr;padding:4px 0;gap:4px}
- /* Existing posters have embedded small type. Keep their source intact;
-    mobile uses the approved photo placeholders until text-free assets arrive. */
- .work-tile img{display:none}.tile-placeholder{display:block}
+ .work-tile img{display:block;object-fit:contain}
+ .work-tile.is-missing img{display:none}.work-tile.is-missing .tile-placeholder{display:block}
  .tile-caption{left:16px;bottom:16px}.tile-caption h2{font-size:18px}.tile-caption p{font-size:14px;margin-top:4px}
  .shot-brief{left:16px;right:16px;top:28px;text-align:left;font-size:13px}.shot-brief span{font-size:10px}
  .tile-arrow{right:20px;bottom:16px}
