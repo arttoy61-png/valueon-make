@@ -22,3 +22,22 @@ document.querySelectorAll('.contact-list').forEach(list=>{
   home.innerHTML=`<span>HOME</span><strong><a href="${valueonHome}">VALUEON 공식 홈페이지 ↗</a></strong>`;
   list.appendChild(home);
 });
+
+
+const valueonHomeStore='https://arttoy61-png.github.io/valueon-home/';
+if(n && !n.querySelector('[data-valueon-home]')){
+  const homeLink=document.createElement('a');
+  homeLink.href=valueonHomeStore;
+  homeLink.textContent='VALUEON HOME ↗';
+  homeLink.dataset.valueonHome='';
+  homeLink.className='home-store-link';
+  n.appendChild(homeLink);
+}
+document.querySelectorAll('.footer').forEach(footer=>{
+  if(footer.querySelector('[data-valueon-home]'))return;
+  const homeLink=document.createElement('a');
+  homeLink.href=valueonHomeStore;
+  homeLink.textContent='VALUEON HOME ↗';
+  homeLink.dataset.valueonHome='';
+  footer.insertBefore(homeLink,footer.lastElementChild);
+});
