@@ -21,6 +21,17 @@
     if (!event.target.closest('.make-header')) close();
   });
   matchMedia('(max-width:760px)').addEventListener('change', () => close());
+
+  const valueonHomeUrl='https://arttoy61-png.github.io/valueon-home/';
+  if(nav && !nav.querySelector('[data-valueon-home]')){
+    const homeLink=document.createElement('a');
+    homeLink.href=valueonHomeUrl;
+    homeLink.textContent='VALUEON HOME ↗';
+    homeLink.dataset.valueonHome='';
+    homeLink.className='home-store-link';
+    nav.appendChild(homeLink);
+  }
+
   document.querySelectorAll('.work-tile img').forEach(img => {
     const fallback = () => img.closest('.work-tile').classList.add('is-missing');
     img.addEventListener('error', fallback);
